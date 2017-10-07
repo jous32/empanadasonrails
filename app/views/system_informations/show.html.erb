@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ram available:</strong>
+  <%= @system_information.ram_available %>
+</p>
+
+<p>
+  <strong>Checked at:</strong>
+  <%= @system_information.checked_at %>
+</p>
+
+<%= link_to 'Edit', edit_system_information_path(@system_information) %> |
+<%= link_to 'Back', system_informations_path %>

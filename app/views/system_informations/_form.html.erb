@@ -1,0 +1,25 @@
+<%= form_for(@system_information) do |f| %>
+  <% if @system_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@system_information.errors.count, "error") %> prohibited this system_information from being saved:</h2>
+
+      <ul>
+      <% @system_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ram_available %><br>
+    <%= f.number_field :ram_available %>
+  </div>
+  <div class="field">
+    <%= f.label :checked_at %><br>
+    <%= f.datetime_select :checked_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

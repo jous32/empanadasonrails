@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing System Informations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ram available</th>
+      <th>Checked at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @system_informations.each do |system_information| %>
+      <tr>
+        <td><%= system_information.ram_available %></td>
+        <td><%= system_information.checked_at %></td>
+        <td><%= link_to 'Show', system_information %></td>
+        <td><%= link_to 'Edit', edit_system_information_path(system_information) %></td>
+        <td><%= link_to 'Destroy', system_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New System information', new_system_information_path %>
